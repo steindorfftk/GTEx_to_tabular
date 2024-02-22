@@ -1,11 +1,14 @@
 data = {}
 import argparse
+import os
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-f', '--file', type=str, help='Input file')
 parser.add_argument('-o', '--output', type=str, help='Output directory')
 args = parser.parse_args()
 
+os.makedirs(args.output, exist_ok=True)
 
 count = 0
 with open(args.file,'r') as texto:
